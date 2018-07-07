@@ -1,0 +1,20 @@
+spring:
+  kafka:
+      producer:
+        retries: 0
+        batch-size: 16384
+        buffer-memory: 33554432
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        bootstrap-servers: 114.116.76.24:9092, 122.112.248.30:9092, 118.25.67.74:9092
+      consumer:
+        group-id: sensetime
+        auto-offset-reset: earliest
+        enable-auto-commit: true
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        bootstrap-servers: 114.116.76.24:9092, 122.112.248.30:9092, 118.25.67.74:9092
+app:
+  topic:
+    sensetime:
+      name0: topic0
